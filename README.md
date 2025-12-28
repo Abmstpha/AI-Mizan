@@ -59,6 +59,7 @@ The Excel file contains the following structure:
 | `grok` | Score/Output for Grok |
 | `mistral` | Score/Output for Mistral |
 | `llama` | Score/Output for Llama |
+| `notes` | Human observations, corrections, or score justifications |
 
 ### Methodology
 
@@ -71,7 +72,7 @@ Since we have paired sentences (Hassaniya <-> English), the "ground truth" for o
 
 ## Prompt Design Principles
 
-	• Multiple valid answers when appropriate
+ • Multiple valid answers when appropriate
  • No forced standardization (orthography varies on purpose)
  • Dialect-first, not MSA-derived
  • Designed for evaluation, not demo quality
@@ -80,7 +81,7 @@ Since we have paired sentences (Hassaniya <-> English), the "ground truth" for o
 
 ## What This Is Not
 
-	• Not a translation dataset
+ • Not a translation dataset
  • Not a training corpus
  • Not standardized Arabic
  • Not optimized for leaderboard gaming
@@ -89,7 +90,7 @@ Since we have paired sentences (Hassaniya <-> English), the "ground truth" for o
 
 ## Intended Use
 
-	• LLM benchmarking
+ • LLM benchmarking
  • Dialect robustness analysis
  • Research on low-resource language evaluation
  • Comparative model studies (open vs proprietary)
