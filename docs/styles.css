@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Inter:wght@400;700&display=swap');
+
+body {
+  font-family: 'Inter', 'Cairo', sans-serif !important;
+}
+
+/* Make headers pop */
+h1, h2, h3 {
+  font-family: 'Cairo', sans-serif !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em;
+}
+
+/* Remove default Nextra directory listings if any appear erroneously */
+.nextra-sidebar-container {
+    background-color: #f9fafb !important; /* Light modern gray */
+}
+
+/* Custom link colors */
+a {
+    color: #0070f3;
+    text-decoration: none;
+}

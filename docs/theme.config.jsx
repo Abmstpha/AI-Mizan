@@ -17,5 +17,12 @@ export default {
     i18n: [
         { locale: 'ar', text: 'العربية', direction: 'rtl' }
     ],
-    direction: 'rtl'
+    direction: 'rtl',
+    darkMode: false,
+    nextThemes: {
+        defaultTheme: 'light',
+        forcedTheme: 'light'
+    },
+    primaryHue: 200, // Modern blue
+    primarySaturation: 80
 }
