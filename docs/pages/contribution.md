@@ -10,8 +10,6 @@
 
 للبدء، حمل ملف الإكسل (Excel) الجاهز:
 
-[⬇️ تحميل ملف التقييم (Excel)](../mizan_template.xlsx)
-
 <a href="../mizan_template.xlsx" download style="background-color: #0070f3; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 10px; box-shadow: 0 4px 14px 0 rgba(0,118,255,0.39);">
   ⬇️ تحميل ملف التقييم (Excel)
 </a>
