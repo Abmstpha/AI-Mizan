@@ -1,1 +1,3 @@
-sentence,eval_type,chatgpt,gemini,claude,grok,mistral,llama,notes
+sentence (الجملة),eval_type (نوع التقييم),chatgpt,gemini,claude,grok,mistral,llama,notes (ملاحظات)
+"شلحال اياك الخير اياك معافي اياك ماطاري باس.",الفهم,8,,,,,,فهم جيد للمفردات
+"How are you? Hope everything’s is fine and you are not dealing with any issues",توليد,3,,,,,,ترجمة ركيكة وليست حسانية أصيلة
