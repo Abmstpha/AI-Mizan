@@ -1,105 +1,50 @@
+# ميزان-AI (Mizan-AI)
 
-## Mizan-AI
+**ميزان-AI** هو مشروع لتقييم قدرات الذكاء الاصطناعي (LLMs) في فهم وإنتاج اللهجة الحسانية الموريتانية.
 
-Mizan-AI is an evaluation-oriented dataset designed to test how well Large Language Models (LLMs) handle Hassaniya Arabic, a low-resource Arabic variety spoken mainly in Mauritania and surrounding regions.
+نحن لا نعتمد على المقاييس الآلية المعقدة (مثل BLEU score)، بل نؤمن بأن **التقييم البشري المباشر** هو الطريقة الوحيدة لقياس الفهم الحقيقي للهجات قليلة المصادر.
 
-The project focuses on capability assessment, not fine-tuning. It provides carefully designed prompts to probe understanding, generation, and linguistic competence in Hassaniya across multiple modalities.
+---
 
-⸻
+## الفكرة (الرؤية)
 
-## Motivation
+معظم قواعد البيانات تركز على اللغات الكبرى أو الفصحى. "ميزان" يهدف لكشف الفجوة في التعامل مع اللهجة الحسانية من خلال:
 
-Most LLM benchmarks focus on high-resource languages or standardized dialects (MSA, English, French). Hassaniya is largely absent from evaluation datasets, which leads to:
- • Overestimated multilingual performance
- • Silent failure modes in African and Maghrebi dialects
- • No visibility into reasoning vs memorization behavior
+1. **الفهم (Understanding)**: هل يفهم النموذج الجملة الحسانية؟ (نختبره بجمل حسانية).
+2. **الإنتاج (Generation)**: هل يستطيع التحدث بالحسانية بطلاقة؟ (نطلب منه ترجمة جمل إنجليزية للحسانية).
+3. **التقييم البشري (Manual Eval)**: أنت الحكم! قارن الإجابات وقيمها بنفسك.
 
-Mizan-AI exists to expose those gaps.
+---
 
-⸻
+## هيكلة المشروع
 
-## Scope
-
-This repository contains prompt-based evaluation datasets, not model outputs.
-
-The goal is to measure:
- • Comprehension
- • Generation quality
- • Dialect awareness
- • Code-switching behavior
- • Robustness to non-standard orthography
-
-⸻
-
-## Dataset Structure
-
-The dataset is consolidated into a single spreadsheet validation file, designed for paired-sentence evaluation.
-
+```
 Mizan-AI/
 │
 ├── data/
-│   ├── mizan_benchmark.xlsx    # Master evaluation sheet
-│   └── mizan_benchmark.csv     # Text-based version for version control
+│   ├── mizan_benchmark.csv     # ملف التقييم الرئيسي (أضف جملك هنا)
 │
-├── docs/                       # Documentation
-├── scripts/                    # Utility scripts
+├── docs/                       # شرح تفصيلي لطريقة المساهمة
+├── scripts/                    # أدوات برمجية (للمبرمجين فقط)
 └── README.md
+```
 
-### Evaluation Columns
+---
 
-The Excel file contains the following structure:
+## كيفية المساهمة (ببساطة)
 
-| Column | Description |
-|--------|-------------|
-| `sentence` | The input prompt (Hassaniya or English) |
-| `eval_type` | `understanding` (Hassaniya input) or `generation` (English input) |
-| `chatgpt` | Score/Output for ChatGPT |
-| `gemini` | Score/Output for Gemini |
-| `claude` | Score/Output for Claude |
-| `grok` | Score/Output for Grok |
-| `mistral` | Score/Output for Mistral |
-| `llama` | Score/Output for Llama |
-| `notes` | Human observations, corrections, or score justifications |
+لا تحتاج لخبرة برمجية للمشاركة.
 
-### Methodology
+1. حمل ملف `data/mizan_benchmark.csv`.
+2. انسخ جملة من العمود الأول (`sentence`).
+3. جربها بنفسك على ChatGPT أو Gemini أو أي نموذج آخر.
+4. ضع إجابة النموذج في العمود المخصص له.
+5. في عمود الملاحظات (`notes`)، اكتب تعليقك: هل الإجابة صحيحة؟ هل هي مضحكة؟ هل استخدم كلمة خاطئة؟
 
-1. **Understanding**: The `sentence` is in **Hassaniya**. The model must interpret it (e.g., translate, summarize, or answer questions).
-2. **Generation**: The `sentence` is in **English**. The model must generate the equivalent **Hassaniya** output.
+لمزيد من التفاصيل، اقرأ [دليل المساهمة](docs/index.md).
 
-Since we have paired sentences (Hassaniya <-> English), the "ground truth" for one is simply the other version.
+---
 
-⸻
+## للمبرمجين
 
-## Prompt Design Principles
-
- • Multiple valid answers when appropriate
- • No forced standardization (orthography varies on purpose)
- • Dialect-first, not MSA-derived
- • Designed for evaluation, not demo quality
-
-⸻
-
-## What This Is Not
-
- • Not a translation dataset
- • Not a training corpus
- • Not standardized Arabic
- • Not optimized for leaderboard gaming
-
-⸻
-
-## Intended Use
-
- • LLM benchmarking
- • Dialect robustness analysis
- • Research on low-resource language evaluation
- • Comparative model studies (open vs proprietary)
-
-⸻
-
-## Contribution
-
-All contributions should be added directly to `data/mizan_benchmark.csv` (or the Excel file). Please ensure:
-
-1. You provide the sentence text.
-2. You specify the evaluation type (`understanding` or `generation`).
+يحتوي المجلد `scripts/` على أدوات بلغة Python لتحويل الملفات (`convert_csv_to_excel.py`)، ويحتوي `examples/` على أمثلة لاستدعاء الـ APIs، لكن هذه الأدوات اختيارية تماماً.
