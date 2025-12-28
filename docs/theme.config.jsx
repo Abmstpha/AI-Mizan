@@ -15,6 +15,7 @@ export default {
         </>
     ),
     i18n: [
-        { locale: 'ar', text: 'العربية' }
-    ]
+        { locale: 'ar', text: 'العربية', direction: 'rtl' }
+    ],
+    direction: 'rtl'
 }
