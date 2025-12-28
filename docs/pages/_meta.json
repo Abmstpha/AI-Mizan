@@ -1,0 +1,16 @@
+{
+    "pages": [
+        {
+            "route": "/",
+            "title": "الرؤية (Vision)"
+        },
+        {
+            "route": "/contribution",
+            "title": "كيف تساهم؟ (Contribute)"
+        },
+        {
+            "route": "/developers",
+            "title": "للمطورين (Develoeprs)"
+        }
+    ]
+}
